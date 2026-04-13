@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supply Chain Risk Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 30px;
+      background: linear-gradient(135deg, #eef4ff, #f7f9fc);
+      color: #1f2937;
+    }
+
+    .app-box {
+      max-width: 760px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .intro {
+      color: #4b5563;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 24px;
+      background: #163b66;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0f2d4f;
+    }
+
+    .result-card {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border-left: 6px solid #163b66;
+    }
+
+    .score {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #163b66;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-box">
+    <h1>Supply Chain Risk Checker</h1>
+    <p class="intro">This small app estimates the level of supply chain risk based on three simple conditions. It is a basic way to show how sourcing decisions can affect operational exposure.</p>
+
+    <label for="tariff">Tariff pressure</label>
+    <select id="tariff">
+      <option value="1">Low</option>
+      <option value="2">Medium</option>
+      <option value="3">High</option>
+    </select>
+
+    <label for="supplier">Supplier concentration</label>
+    <select id="supplier">
+      <option value="1">Diversified supplier base</option>
+      <option value="2">Moderately concentrated</option>
+      <option value="3">Single-source exposure</option>
+    </select>
+
+    <label for="leadtime">Lead time uncertainty</label>
+    <select id="leadtime">
+      <option value="1">Low</option>
+      <option value="2">Medium</option>
+      <option value="3">High</option>
+    </select>
+
+    <button onclick="checkRisk()">Analyze Risk</button>
+
+    <div id="result" class="result-card">
+      <div class="score">Risk Level: Not calculated yet</div>
+      <div>Select your conditions and click the button to see the result.</div>
+    </div>
+
+    <a href="scratch.html" class="back-link">Back to Scratch Page</a>
+  </div>
+
+  <script>
+    function checkRisk() {
+      const tariff = parseInt(document.getElementById('tariff').value);
+      const supplier = parseInt(document.getElementById('supplier').value);
+      const leadtime = parseInt(document.getElementById('leadtime').value);
+      const score = tariff + supplier + leadtime;
+
+      const result = document.getElementById('result');
+      let level = '';
+      let recommendation = '';
+
+      if (score <= 4) {
+        level = 'Low';
+        recommendation = 'Your current setup looks relatively stable. Keep monitoring suppliers, maintain communication, and review risk indicators regularly.';
+      } else if (score <= 7) {
+        level = 'Medium';
+        recommendation = 'There is some meaningful exposure here. Consider developing backup suppliers, improving visibility, and reviewing inventory buffers.';
+      } else {
+        level = 'High';
+        recommendation = 'This supply chain setup is highly exposed. You should prioritize diversification, reduce sole-source risk, and create a response plan quickly.';
+      }
+
+      result.innerHTML = `
+        <div class="score">Risk Level: ${level}</div>
+        <div><strong>Total Score:</strong> ${score} out of 9</div>
+        <div style="margin-top:10px;"><strong>Recommendation:</strong> ${recommendation}</div>
+      `;
+    }
+  </script>
+</body>
+</html>

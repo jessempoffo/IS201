@@ -1,0 +1,101 @@
+:root {
+  --navy: #163b66;
+  --navy-dark: #0f2744;
+  --gold: #d8b25f;
+  --light: #f5f7fb;
+  --text: #202733;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--text);
+}
+
+.hero-section {
+  min-height: 78vh;
+  background:
+    linear-gradient(rgba(12, 24, 43, 0.7), rgba(12, 24, 43, 0.7)),
+    url('../images/supply-chain.jpg') center/cover no-repeat;
+}
+
+.subpage-hero {
+  background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #dbeafe;
+}
+
+.profile-photo {
+  max-width: 320px;
+  border-radius: 24px;
+  border: 5px solid rgba(255, 255, 255, 0.18);
+}
+
+.info-panel,
+.summary-box,
+.skill-card,
+.feature-box {
+  background: var(--light);
+  border-radius: 18px;
+  padding: 1.25rem;
+}
+
+.custom-card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(10, 20, 40, 0.06);
+}
+
+.light-section {
+  background: #f8fafc;
+}
+
+.section-subtitle {
+  color: #556070;
+}
+
+.site-footer {
+  background: var(--navy-dark);
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.resume-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resume-heading {
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.resume-item {
+  margin-bottom: 1.75rem;
+}
+
+.resume-item ul {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+  }
+}

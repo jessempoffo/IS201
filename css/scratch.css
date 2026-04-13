@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #efe8dc;
+  color: #1d2430;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.nav-box {
+  background-color: #173553;
+  text-align: center;
+  padding: 18px;
+}
+
+.nav-box a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.hero-box {
+  background-color: #dce8f3;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-box h1,
+.content-box h2,
+.image-box h2,
+.video-box h2,
+.anchor-box h2,
+.tableau-box h2 {
+  color: #102c46;
+  font-family: Arial, sans-serif;
+}
+
+.content-box,
+.image-box,
+.video-box,
+.anchor-box,
+.tableau-box,
+.footer-box {
+  width: 82%;
+  margin: 28px auto;
+  background: white;
+  padding: 26px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.main-image {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  margin: 18px auto;
+  border: 4px solid #d8d8d8;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.footer-box {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.footer-box a {
+  color: #173553;
+  font-weight: bold;
+  text-decoration: none;
+}
